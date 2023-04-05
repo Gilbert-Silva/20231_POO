@@ -1,0 +1,7 @@
+run = "mcs './Aula_0405/AreaTriangulo.cs' -out:Main.exe ; mono Main.exe"
+
+[nix]
+channel = "stable-22_11"
+
+[deployment]
+run = ["sh", "-c", "mcs"]
