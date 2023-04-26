@@ -27,6 +27,16 @@ class Lista {
     inicio = null;
     fim = null;
   }
+  public void Insert(int pos, string texto)
+  {
+    
+  }
+  public void Remove(string texto) {
+    
+  }
+  public int Index(string texto) {
+    return 0;
+  }
   public void Append(string texto) {
     No novo = new No(texto);
     if (inicio == null) {
@@ -39,6 +49,7 @@ class Lista {
       // inserindo a partir do segundo elemento
       fim.SetProx(novo);
       fim = novo;
+      novo.SetProx(null); // redundante com o construtor do nó
     }
   }
   public override string ToString() {
