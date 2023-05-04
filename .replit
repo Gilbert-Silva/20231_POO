@@ -1,4 +1,4 @@
-run = "mcs './Aula_0426/Ex01.cs' -out:Main.exe ; mono Main.exe"
+run = "mcs './Aula_0504/Ex01.cs' -out:Main.exe ; mono Main.exe"
 #run = "python3 './Aula_0424/Ex01.py'"
 
 [nix]
