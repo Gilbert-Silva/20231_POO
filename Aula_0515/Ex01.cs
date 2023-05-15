@@ -33,7 +33,6 @@ class Program {
     Paciente a = new Paciente { Nome = "Joao", Fone = "1234",
       Nascimento = DateTime.Parse("2000-04-18") };
     Paciente b = new Paciente { Nome = "Maria", Fone = "4321",
-      Nascimento = DateTime.Parse("2000-06-18") };
     Console.WriteLine(a.Nome + " " + a.Idade);
     Console.WriteLine(b.Nome + " " + b.Idade);
   }
