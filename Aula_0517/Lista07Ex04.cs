@@ -35,6 +35,14 @@ class Program {
   }
   public static void Excluir() {
     Console.WriteLine("Excluir um compromisso");
+    int n = 0;
+    foreach (Compromisso c in agenda.Listar())
+      Console.WriteLine($"{n++} - {c}");
+    Console.Write("Informe o número do compromisso para remover: ");
+    n = int.Parse(Console.ReadLine()); 
+    Compromisso x = agenda.Listar()[n];
+    agenda.Excluir(x);
+    Console.WriteLine("Compromisso excluído com sucesso");    
   }
   public static void Listar() {
     Console.WriteLine("Listar os compromissos");
@@ -43,6 +51,12 @@ class Program {
   }
   public static void Pesquisar() {
     Console.WriteLine("Pesquisar compromissos");
+    Console.Write("Informe o mês: ");
+    int mes = int.Parse(Console.ReadLine());
+    Console.Write("Informe o ano: ");
+    int ano = int.Parse(Console.ReadLine());
+    foreach (Compromisso c in agenda.Pesquisar(mes, ano))
+      Console.WriteLine(c);    
   }
 }
 class Compromisso {
@@ -64,9 +78,27 @@ class Agenda {
     comps[k] = c;
     k++;
   }
+  public void Excluir(Compromisso c) {
+    k--;
+    Compromisso[] novo = new Compromisso[k];
+    int n = 0;
+    foreach(Compromisso x in Listar())
+      if (x != c) novo[n++] = x;
+    comps = novo;
+  }
   public Compromisso[] Listar() {
     Compromisso[] aux = new Compromisso[k];
     Array.Copy(comps, aux, k);
+    return aux;
+  }
+  public Compromisso[] Pesquisar(int mes, int ano) {
+    int n = 0;
+    foreach(Compromisso c in Listar()) 
+      if (c.Data.Year == ano && c.Data.Month == mes) n++;
+    Compromisso[] aux = new Compromisso[n];
+    n = 0;
+    foreach(Compromisso c in Listar()) 
+      if (c.Data.Year == ano && c.Data.Month == mes) aux[n++] = c;
     return aux;
   }
 }
