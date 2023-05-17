@@ -79,11 +79,11 @@ class Agenda {
     k++;
   }
   public void Excluir(Compromisso c) {
-    k--;
-    Compromisso[] novo = new Compromisso[k];
+    Compromisso[] novo = new Compromisso[k-1];
     int n = 0;
     foreach(Compromisso x in Listar())
       if (x != c) novo[n++] = x;
+    k--;
     comps = novo;
   }
   public Compromisso[] Listar() {
