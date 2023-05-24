@@ -1,5 +1,5 @@
-run = "mcs './Aula_0517/Lista07Ex04.cs' -out:Main.exe ; mono Main.exe"
-#run = "python3 './Aula_0424/Ex01.py'"
+#run = "mcs './Aula_0524/Ex02.cs' -out:Main.exe ; mono Main.exe"
+run = "python3 './Aula_0524/Ex03.py'"
 
 [nix]
 channel = "stable-22_11"
