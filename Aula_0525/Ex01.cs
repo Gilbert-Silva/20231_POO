@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 class Jogador : IComparable {
   private string nome = "sem nome";
@@ -46,14 +47,31 @@ class GolComparer : IComparer {
     return -x.NumGols.CompareTo(y.NumGols);
   }  
 }
+
+  
 class Program {
   public static void Main() {
     Jogador a = new Jogador("Z", 10, 509);
     Jogador b = new Jogador("S", 8, 172);
     Jogador c = new Jogador("E", 11, 122);
+    
     Jogador[] v = {a, b, c};
     Array.Sort(v, new GolComparer());
-    foreach (Jogador j in v)
+
+    ArrayList w = new ArrayList();
+    w.Add(a);
+    w.Add(b);
+    w.Add(c);
+    //w.Add(2017);
+    //w.Add("Teste");
+
+    List<Jogador> list = new List<Jogador>();
+    list.Add(a);
+    list.Add(b);
+    list.Add(c);
+    //list.Add(10);
+    
+    foreach (Jogador j in list)
       Console.WriteLine(j);
   }
 }
