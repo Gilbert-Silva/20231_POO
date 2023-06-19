@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfCategoria xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Categoria>
+    <Id>1</Id>
+    <Descricao>Mouse</Descricao>
+  </Categoria>
+  <Categoria>
+    <Id>2</Id>
+    <Descricao>Monitor</Descricao>
+  </Categoria>
+</ArrayOfCategoria>
