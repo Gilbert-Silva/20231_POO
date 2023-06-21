@@ -4,8 +4,4 @@
     <Id>1</Id>
     <Descricao>Mouse</Descricao>
   </Categoria>
-  <Categoria>
-    <Id>2</Id>
-    <Descricao>Monitor</Descricao>
-  </Categoria>
 </ArrayOfCategoria>

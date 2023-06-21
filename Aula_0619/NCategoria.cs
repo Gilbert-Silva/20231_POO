@@ -31,8 +31,42 @@ class NCategoria {
   }
   public static void Salvar() {
     XmlSerializer xml = new XmlSerializer(typeof(List<Categoria>)); 
-    StreamWriter f = new StreamWriter("categorias.xml");
-    xml.Serialize(f, categorias);
-    f.Close();
+    /*
+    StreamWriter f = null;
+    try {
+      f = new StreamWriter("categorias.xml");
+      xml.Serialize(f, categorias);
+    }
+    finnaly {
+      if (f != null) f.Close();
+    }
+    */
+    using (StreamWriter f = new StreamWriter("categorias.xml")) {
+      xml.Serialize(f, categorias);
+    }
+  }
+  public static void Abrir() {
+    XmlSerializer xml = new XmlSerializer(typeof(List<Categoria>)); 
+    /*
+    StreamWriter f = null;
+    try {
+      f = new StreamWriter("categorias.xml");
+      xml.Serialize(f, categorias);
+    }
+    finnaly {
+      if (f != null) f.Close();
+    }
+    */
+    StreamReader f = null;
+    try {
+      f = new StreamReader("categorias.xml");
+      categorias = (List<Categoria>) xml.Deserialize(f);
+    }
+    catch {
+      categorias = new List<Categoria>();
+    }
+    finally {
+      if (f != null) f.Close();
+    }
   }
 }

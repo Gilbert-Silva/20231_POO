@@ -2,7 +2,7 @@ using System;
 
 class Program {
   public static void Main() {
-    Console.WriteLine("\nBem-vindo(a) ao IF Shop!\n");
+    NCategoria.Abrir();    Console.WriteLine("\nBem-vindo(a) ao IF Shop!\n");
     int op = 100;
     while (op != 0) {
       try {
